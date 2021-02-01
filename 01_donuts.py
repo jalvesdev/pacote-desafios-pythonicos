@@ -11,10 +11,13 @@ e donuts(23) retorna 'Number of donuts: many'
 
 def donuts(count):
     # +++ SUA SOLUÇÃO +++
+    response = "Number of donuts: "
     if count >= 10:
-        return "Number of donuts: many"
+        response = response + "many"
     else:
-        return "Number of donuts: " + str(count)
+        response = response + str(count)
+    
+    return response
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
