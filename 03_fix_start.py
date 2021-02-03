@@ -15,7 +15,10 @@ onde todas as instancias de stra foram substituidas por strb.
 
 def fix_start(s):
     # +++ SUA SOLUÇÃO +++
-    return
+    str_a = s[0:1]
+    str_b = s[1:]
+    
+    return str_a + str_b.replace(str_a,'*')
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
