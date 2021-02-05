@@ -14,7 +14,15 @@ Assuma que a e b tem tamanho 2 ou maior.
 
 def mix_up(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
+    response = ""
+    
+    if (len(a) > 2)  and (len(b) > 2):
+        pre_a = a[2:]
+        pre_b = b[2:]
+        strings  = (b.replace(pre_b, pre_a), a.replace(pre_a, pre_b))
+        response = " ".join(strings) 
+    
+    return response
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -42,3 +50,7 @@ if __name__ == '__main__':
     test(mix_up, ('dog', 'dinner'), 'dig donner')
     test(mix_up, ('gnash', 'sport'), 'spash gnort')
     test(mix_up, ('pezzy', 'firm'), 'fizzy perm')
+    test(mix_up, ('x', 'y'), '')
+    test(mix_up, ('A', 'yes'), '')
+    test(mix_up, ('nothing', 'n'), '')
+    test(mix_up, ('yes', 'no'), '')
