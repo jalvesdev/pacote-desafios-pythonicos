@@ -52,18 +52,47 @@ e conferindo cada etapa do seu progresso.
 """
 
 import sys
-
+from collections import Counter
 
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
+def print_words(filename):
 
+    summary = file_content_list(filename)
+
+    for element in sorted(summary):
+        print (element, summary[element])
+
+    return 1
+
+def print_top(filename):
+    
+    summary = file_content_list(filename)
+
+    count = 0
+
+    for element in sorted(summary, key=summary.get,reverse=True):
+        count += 1
+        print (element, summary[element])
+        if count == 20:
+            break
+
+    return 1
+
+def file_content_list(filename):
+    with open(filename) as file:
+        response = (file.read().lower().split())
+        response = sorted(response)
+
+    response = Counter(response)
+    return response
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
 # parêtros do programa.
 def main():
     if len(sys.argv) != 3:
         print('Utilização: ./13_wordcount.py {--count | --topcount} file')
-        sys.exit(1)
+        sys.exit()
 
     option = sys.argv[1]
     filename = sys.argv[2]
