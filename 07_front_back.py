@@ -12,8 +12,24 @@ a-frente + b-frente + a-trás + b-trás
 """
 def front_back(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
+    split_a = split_string(a)
+    split_b = split_string(b)
 
+    response = split_a[0] + split_b[0] + split_a[1] + split_b[1]
+
+    return response
+
+def split_string(s):
+    split_pos = int(len(s) / 2)
+    if (len(s) % 2) == 0:
+        s1 = s[:split_pos]
+        s2 = s[split_pos:]
+    else:
+        s1 = s[:(split_pos + 1)]
+        s2 = s[split_pos + 1:]
+    
+    response = [s1,s2]
+    return response
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
