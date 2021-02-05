@@ -13,7 +13,16 @@ antes de combina-las.
 
 def front_x(words):
     # +++ SUA SOLUÇÃO +++
-    return
+    words_x = []
+    words_no_x = []
+    for word in words:
+        if word[:1] == "x":
+            words_x.append(word)
+        else:
+            words_no_x.append(word)
+    
+    response = sorted(words_x) + sorted(words_no_x)
+    return response
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
